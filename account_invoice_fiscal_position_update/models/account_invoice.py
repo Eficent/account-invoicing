@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # © 2011-2014 Julius Network Solutions SARL <contact@julius.fr>
 # © 2014 Akretion (http://www.akretion.com)
 # @author Mathieu Vatel <mathieu _at_ julius.fr>
