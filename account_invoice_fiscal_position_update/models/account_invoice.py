@@ -29,7 +29,8 @@ class AccountInvoice(models.Model):
         inv_type = self.type
         for line in self.invoice_line_ids:
             if line.product_id:
-                product = line.product_id
+                product = line.with_context(force_company=self.company_id.id).\
+                    product_id
                 if inv_type in ('out_invoice', 'out_refund'):
                     account = (
                         product.property_account_income_id or
