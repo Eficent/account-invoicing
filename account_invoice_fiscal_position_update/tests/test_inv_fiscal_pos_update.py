@@ -40,12 +40,16 @@ class TestProductIdChange(AccountingTestCase):
 
     def test_fiscal_position_id_change(self):
         partner = self.res_partner_model.create(dict(name="George"))
-        account_export_id = self.account_model.sudo().create({
-            'code': "710000",
-            'name': "customer export account",
-            'user_type_id': self.account_user_type.id,
-            'reconcile': True,
-        })
+        account_export_id = self.account_model.sudo().search(
+            [('code', '=', '710000')], limit=1
+        )
+        if not account_export_id:
+            account_export_id = self.account_model.sudo().create({
+                'code': "710000",
+                'name': "customer export account",
+                'user_type_id': self.account_user_type.id,
+                'reconcile': True,
+            })
         tax_sale = self.tax_model.create({
             'name': 'Sale tax',
             'type_tax_use': 'sale',
