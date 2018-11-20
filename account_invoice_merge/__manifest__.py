@@ -11,7 +11,7 @@
     'category': 'Finance',
     'summary': "Merge invoices in draft",
     'author': "Elico Corp,Odoo Community Association (OCA)",
-    'website': "https://github.com/OCA/<repo>" or "https://github.com/OCA/<repo>/tree/<branch>/<addon>",
+    'website': "https://github.com/OCA/account-invoicing",
     'license': 'AGPL-3',
     'depends': ['account'],
     'data': [
